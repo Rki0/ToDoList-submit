@@ -24,15 +24,58 @@ function sayHello(userId){
   const date = new Date();
   const hour = date.getHours();
   if(hour >= 5 && hour < 9){
-    hello.innerText = `Good Morning, ${userId}!`;
+    const span = document.createElement("span");
+    span.innerText = "Good Morning";
+
+    const icon = document.createElement("i");
+    icon.setAttribute("class","fas fa-coffee");
+
+    const who = document.createElement("span");
+    who.innerText = `, ${userId}`;
+
+    hello.appendChild(span);
+    hello.appendChild(icon);
+    hello.appendChild(who);
   } else if(hour >= 9 && hour < 17){
-    hello.innerText = `Good Afternoon, ${userId}!`;
+    const span = document.createElement("span");
+    span.innerText = "Good Afternoon";
+
+    const icon = document.createElement("i");
+    icon.setAttribute("class","fas fa-sun");
+
+    const who = document.createElement("span");
+    who.innerText = `, ${userId}`;
+
+    hello.appendChild(span);
+    hello.appendChild(icon);
+    hello.appendChild(who);
   } else if(hour >= 17 && hour < 21){
-    hello.innerText = `Good Evening, ${userId}!`;
+    const span = document.createElement("span");
+    span.innerText = "Good Evening";
+
+    const icon = document.createElement("i");
+    icon.setAttribute("class","fas fa-utensils");
+
+    const who = document.createElement("span");
+    who.innerText = `, ${userId}`;
+
+    hello.appendChild(span);
+    hello.appendChild(icon);
+    hello.appendChild(who);
   } else{
-    hello.innerText = `Good Night, ${userId}!`;
+    const span = document.createElement("span");
+    span.innerText = "Good Night";
+
+    const icon = document.createElement("i");
+    icon.setAttribute("class","fas fa-moon");
+
+    const who = document.createElement("span");
+    who.innerText = `, ${userId}`;
+
+    hello.appendChild(span);
+    hello.appendChild(icon);
+    hello.appendChild(who);
   }
-  
 }
 
 const getId = localStorage.getItem(USER_ID);
