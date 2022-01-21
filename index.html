@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do-List-Challenge</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+</head>
+<body>
+  <!--clock-->
+  <h1 class="clock"></h1>
+  <!--login-->
+  <form class="loginForm hidden">
+    <input type="text" class="userId" autofocus required placeholder="Please Write Your Name">
+    <button>Login</button>
+  </form>
+  <h2 class="helloUser hidden"></h2>
+  <!--To-Do-List input-->
+  <form class="todoForm">
+    <input type="text" class="writeTodo" placeholder="What do you want to do?">
+  </form>
+  <!--Display To-Do-List-->
+  <ul class="todoList"></ul>
+  <!--quotes-->
+  <div class="quote">
+    <span class="quotes"></span><br>
+    <span class="author"></span>
+  </div>
+  <!--weather-->
+  <div class="weather">
+    <div class="first">
+      <i class="fas fa-temperature-high"></i>
+      <span class="temp"></span>&deg;C
+    </div>
+    <div class="second">
+      <i class="far fa-compass fa-spin"></i>
+      <span class="location"></span>
+    </div>
+  </div>
+  <script src="js/clock.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/todo.js"></script>
+  <script src="js/quotes.js"></script>
+  <script src="js/weather.js"></script>
+  <script src="js/background.js"></script>
+</body>
+</html>
