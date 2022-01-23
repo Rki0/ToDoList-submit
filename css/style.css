@@ -146,3 +146,21 @@ img {
 .hidden {
   display: none;
 }
+
+@media screen and (max-width: 425px) {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .calendar {
+    font-size: 1em;
+  }
+  .clock {
+    font-size: 3em;
+  }
+
+  .helloUser {
+    font-size: 2em;
+  }
+}
