@@ -1,31 +1,24 @@
 const loginForm = document.querySelector(".loginForm");
-const hello = document.querySelector(".helloUser");
+const userId = document.querySelector(".userId");
+const hello = document.querySelector(".hello");
 
 const USER_ID = "userId";
 const HIDDEN = "hidden";
 
-function login(event){
+function helloUser(event){
   event.preventDefault();
-  const userId = document.querySelector(".userId").value;
-  localStorage.setItem(USER_ID, userId);
+  const who = userId.value;
+  localStorage.setItem(USER_ID, who);
   loginForm.classList.add(HIDDEN);
-  sayHello(userId);
+  showHello(who);
 }
 
-/*
-function sayHello(userId){
-  hello.classList.remove(HIDDEN);
-  hello.innerText = `Hello, ${userId}!`;
-}
-*/
-
-function sayHello(userId){
-  hello.classList.remove(HIDDEN);
+function showHello(userId){
   const date = new Date();
   const hour = date.getHours();
   if(hour >= 5 && hour < 9){
     const span = document.createElement("span");
-    span.innerText = "Good Morning";
+    span.innerText = "Good Morning ";
 
     const icon = document.createElement("i");
     icon.setAttribute("class","fas fa-coffee");
@@ -38,7 +31,7 @@ function sayHello(userId){
     hello.appendChild(who);
   } else if(hour >= 9 && hour < 17){
     const span = document.createElement("span");
-    span.innerText = "Good Afternoon";
+    span.innerText = "Good Afternoon ";
 
     const icon = document.createElement("i");
     icon.setAttribute("class","fas fa-sun");
@@ -51,7 +44,7 @@ function sayHello(userId){
     hello.appendChild(who);
   } else if(hour >= 17 && hour < 21){
     const span = document.createElement("span");
-    span.innerText = "Good Evening";
+    span.innerText = "Good Evening ";
 
     const icon = document.createElement("i");
     icon.setAttribute("class","fas fa-utensils");
@@ -64,7 +57,7 @@ function sayHello(userId){
     hello.appendChild(who);
   } else{
     const span = document.createElement("span");
-    span.innerText = "Good Night";
+    span.innerText = "Good Night ";
 
     const icon = document.createElement("i");
     icon.setAttribute("class","fas fa-moon");
@@ -76,14 +69,14 @@ function sayHello(userId){
     hello.appendChild(icon);
     hello.appendChild(who);
   }
+  hello.classList.remove(HIDDEN);
 }
 
-const getId = localStorage.getItem(USER_ID);
+const savedId = localStorage.getItem(USER_ID);
 
-if(getId === null){
+if(savedId === null){
   loginForm.classList.remove(HIDDEN);
-  loginForm.addEventListener("submit", login);
+  loginForm.addEventListener("submit", helloUser);
 } else{
-  sayHello(getId);
+  showHello(savedId);
 }
-

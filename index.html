@@ -4,29 +4,30 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>To-Do-List-Challenge</title>
+  <title>Momentum</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 </head>
 <body>
-  <!--clock-->
-  <h1 class="calendar"></h1>
+  <!--date and clock-->
+  <h1 class="date"></h1>
   <h1 class="clock"></h1>
-  <!--login-->
+  <!--before login-->
   <form class="loginForm hidden">
     <input type="text" class="userId" autofocus required placeholder="Please Write Your Name">
     <button>Login</button>
   </form>
-  <h2 class="helloUser hidden"></h2>
-  <!--To-Do-List input-->
+  <!--after login-->
+  <h2 class="hello hidden"></h2>
+  <!--input todo-->
   <form class="todoForm">
-    <input type="text" class="writeTodo" placeholder="What do you want to do?">
+    <input type="text" class="todo" placeholder="Write What You Have To Do">
   </form>
-  <!--Display To-Do-List-->
+  <!--show todo-->
   <ul class="todoList"></ul>
   <!--quotes-->
-  <div class="quote">
-    <span class="quotes"></span><br>
+  <div class="quotes">
+    <span class="quote"></span><br>
     <span class="author"></span>
   </div>
   <!--weather-->
