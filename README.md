@@ -11,6 +11,8 @@
 
 ## 🤔 포함된 기능
 
+### JS는 바닐라 JS가 사용되었습니다!
+
 - 날짜 표시, 시간 표시
 - 로그인(이름 입력)창 + 시간에 따른 인사👋
 - 할 일 목록 입력 창 + 할 일 리스트
@@ -347,8 +349,8 @@ author.innerText = `${randomQuote.author}`;
 navigator.geolocation.getCurrentPosition(forecast, sorry);
 ```
 
-사용자의 현재 위치를 받는 동작을 하는 부분이다.  
-만약 사용자의 위치를 받는 데 성공했으면 **forecast**가 실행되고, 실패하면 **sorry**가 실행된다.
+> 사용자의 현재 위치를 받는 동작을 하는 부분이다.  
+> 만약 사용자의 위치를 받는 데 성공했으면 **forecast**가 실행되고, 실패하면 **sorry**가 실행된다.
 
 ```javascript
 function forecast(position) {
@@ -393,3 +395,81 @@ document.body.appendChild(img);
 > 그렇게 만든 **img** 태그를 **body** 태그에 자식 요소로 넣어줘서 html에 표시될 수 있게 만든 것이 있다.  
 > 가끔씩 태그를 만들어 놓고 정작 부모 요소에 연결하지 않은채로 왜 안되는지 이해를 못했었는데,  
 > 다음부터는 조심해야겠다.
+
+## 🎨 CSS
+
+> CSS 파트에서는 크게 주목할 것은 없다. block 속성을 가지는 태그를 활용하여 위에서 아래로 차례대로 쌓아나갔기 때문이다.  
+> 다만 나름대로 잘 이해가 안됐던 것들 중 기억해야할 것들은 있었다.
+
+```css
+.todoList input {
+  display: none;
+}
+
+.todoList label {
+  width: 11px;
+  height: 11px;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+}
+
+.todoList label:hover {
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label {
+  background: linear-gradient(
+    45deg,
+    black 25%,
+    transparent 0,
+    transparent 50%,
+    black 0,
+    black 75%,
+    transparent 0
+  );
+}
+```
+
+> 나는 To-Do-List에서 체크를 통해 수행 완료한 목록을 확인하고자 했다.  
+> 문제는 checkbox를 만드는 **input의 경우 CSS로 꾸미는 것이 불가능하다는 것이었다.** 그래서 **label이라는 태그를 사용**한다.  
+> input을 지우고, for를 통해 input의 id와 label을 연결해준다. 가장 아래의 CSS 코드는 label과 input이 연결되어있으므로 checkbox를 클릭하면 저 코드를 실행한다는 뜻이다.
+
+```css
+img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: center no-repeat;
+  z-index: -1;
+}
+```
+
+> 배경화면의 경우 가장 마지막에 추가해줬기 때문에 이전에 생성된 모든 요소들이 가려져버렸다.  
+> 이를 해결하기 위해서 간단하게 **z-index**를 사용해서 가장 뒤 쪽으로 보내주었다.
+
+```css
+@media screen and (max-width: 425px) {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .calendar {
+    font-size: 1em;
+  }
+  .clock {
+    font-size: 3em;
+  }
+
+  .helloUser {
+    font-size: 2em;
+  }
+}
+```
+
+> 마지막으로는 화면 크기에 따른 미디어 쿼리를 적용해줬다.  
+> 처음 이 웹을 만들었을 때 친구들에게 평가를 부탁했는데, 아무래도 다들 스마트폰으로 확인하다보니 화면이 깨지거나 내가 의도한 곳에 요소가 배치되지않는 현상이 발생해서 추가했다.  
+> 기본 웹이 단순하기 때문에 크게 수정할 것은 없었고, font-size 정도를 수정하는 것으로 화면 최적화를 해줬다.
