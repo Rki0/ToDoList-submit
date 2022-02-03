@@ -1,68 +1,78 @@
+html,
 body {
   margin: 0;
-  padding: 0;
+  height: 100%;
 }
 
-/*calendar*/
-.calendar {
+/*date*/
+.date {
   display: flex;
-  justify-content: center;
-  margin: 0;
-  margin-top: 100px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+  margin-bottom: 0;
 }
 
 /*clock*/
 .clock {
-  font-size: 8em;
   display: flex;
-  justify-content: center;
-  margin: 0;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px;
+  font-size: 6em;
 }
 
 /*before login*/
 .loginForm {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .userId {
-  background: transparent;
+  margin-right: 10px;
   border-style: none;
-  border-bottom: solid 2px black;
-  margin-right: 5px;
+  border-bottom: 2px solid black;
 }
 
 .loginForm button {
+  all: unset;
   background-color: transparent;
-  border-radius: 5px;
   border: 2px solid black;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 2px;
 }
 
 /*after login*/
-.helloUser {
-  margin: 0;
+.hello {
   display: flex;
   justify-content: center;
-  font-size: 3em;
+  margin: 0;
+  font-size: 2em;
 }
 
 /*input todo*/
 .todoForm {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-.writeTodo {
-  border-style: none;
-  border-bottom: solid 2px black;
-  width: 148px;
+.todo {
   background-color: transparent;
+  width: 165px;
+  border-style: none;
+  border-bottom: 2px solid black;
 }
 
-/*todo list*/
+.todo:focus {
+  outline: none;
+}
+
+/*show todo*/
 .todoList {
-  padding: 0;
+  padding: 0px;
 }
 
 .todoList li {
@@ -70,66 +80,31 @@ body {
   justify-content: center;
 }
 
-.todoList li span {
-  margin-right: 3px;
-}
-
-.todoList input {
-  display: none;
-}
-
-.todoList label {
-  width: 11px;
-  height: 11px;
-  border-style: solid;
-  border-color: black;
-  border-width: 2px;
-}
-
-.todoList label:hover {
-  cursor: pointer;
-}
-
-input[type="checkbox"]:checked + label {
-  background: linear-gradient(
-    45deg,
-    black 25%,
-    transparent 0,
-    transparent 50%,
-    black 0,
-    black 75%,
-    transparent 0
-  );
+.todoList span {
+  margin-right: 5px;
+  font-weight: bold;
 }
 
 .todoList button {
-  background-color: transparent;
-  border-style: none;
+  all: unset;
   color: tomato;
-  font-size: 15px;
-  padding: 0;
-  padding-left: 3px;
-  margin-bottom: 6px;
-}
-
-.todoList button:hover {
   cursor: pointer;
 }
 
 /*quotes*/
-.quote {
+.quotes {
   width: 100%;
-  position: absolute;
-  text-align: center;
   font-style: italic;
+  position: absolute;
   bottom: 5px;
+  text-align: center;
 }
 
 /*weather*/
 .weather {
   position: absolute;
-  right: 5px;
   top: 5px;
+  right: 5px;
 }
 
 /*background*/
@@ -139,28 +114,9 @@ img {
   height: 100%;
   top: 0;
   left: 0;
-  background: center no-repeat;
   z-index: -1;
 }
 
 .hidden {
   display: none;
-}
-
-@media screen and (max-width: 425px) {
-  body {
-    margin: 0;
-    padding: 0;
-  }
-
-  .calendar {
-    font-size: 1em;
-  }
-  .clock {
-    font-size: 3em;
-  }
-
-  .helloUser {
-    font-size: 2em;
-  }
 }

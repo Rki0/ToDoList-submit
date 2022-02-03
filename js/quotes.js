@@ -1,7 +1,7 @@
-const quotes = document.querySelector(".quotes");
+const quote = document.querySelector(".quote");
 const author = document.querySelector(".author");
 
-const quoteList = [
+const quotesList = [
   {
     quote: "Without continuous personal development, you are now all that you will ever become and hell starts when the person you are meets the person you could have been.",
     author: "-Eli cohen-"
@@ -44,7 +44,7 @@ const quoteList = [
   },
 ];
 
-const randomQuote = quoteList[Math.floor(Math.random()*quoteList.length)];
+const randQuote = quotesList[Math.floor(Math.random()*quotesList.length)];
 
-quotes.innerText = `${randomQuote.quote}`;
-author.innerText = `${randomQuote.author}`;
+quote.innerText = randQuote.quote;
+author.innerText = randQuote.author;
